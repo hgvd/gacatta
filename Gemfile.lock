@@ -30,11 +30,7 @@ GEM
     activesupport (3.0.4)
     addressable (2.2.4)
     arel (2.0.8)
-    bcrypt-ruby (2.1.4)
     builder (2.1.2)
-    devise (1.1.5)
-      bcrypt-ruby (~> 2.1.2)
-      warden (~> 1.0.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     faraday (0.5.5)
@@ -123,14 +119,11 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.24)
-    warden (1.0.3)
-      rack (>= 1.0.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  devise
   jquery-rails
   mysql2
   omniauth
