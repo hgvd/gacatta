@@ -1,4 +1,12 @@
 Gacatta::Application.routes.draw do
+  match "/home" => "page#home", :as => :home
+  match "/about" => "page#about", :as => :about
+
+  match "/auth/:provider/callback" => "sessions#create"  
+  match "/signout" => "sessions#destroy", :as => :signout  
+
+  root :to => "page#home"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

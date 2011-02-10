@@ -1,14 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Gacatta</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
+  <title>HGVD.org</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- The 1140px Grid --> 
+  <%= stylesheet_link_tag "1140", :media => "screen" %>
+	
+  <!--[if lte IE 9]>
+  <%= stylesheet_link_tag "ie", :media => "screen" %>
+  <![endif]--> 
+  <!-- Type and image presets --> 
+  <%= stylesheet_link_tag "typeimg", :media => "screen" %>
+  <!-- Make minor type adjustments for 1024 monitors --> 
+  <%= stylesheet_link_tag "smallerscreen", :media => "only screen and (max-width: 1023px)" %>
+  <!-- Resets grid for mobile --> 
+  <%= stylesheet_link_tag "mobile", :media => "handheld, only screen and (max-width: 767px)" %>
+  <!-- Put your layout here --> 
+  <%= stylesheet_link_tag "layout", :media => "screen" %>
+
+  <%= stylesheet_link_tag "application", :media => "screen" %>
+  
   <%= csrf_meta_tag %>
 </head>
 <body>
-
-<%= yield %>
-
+<div class="container" id="header">
+  <div class="row">
+    <div class="sixcol">
+      <%= link_to(image_tag("hgvd-300x66.inverted.png", :title => "HGVD.org Human Genetic Variation in Disease", :id => "logo"), root_path) %>
+    </div>
+    <div class="sixcol last">
+      <ul id="navigation">
+        <li>Home</li>
+        <li>Genes</li>
+        <li>Varations</li>
+        <li>Diseases</li>
+        <li>About</li>
+      </ul>
+      <ul id="signin">
+      <% if current_user %>
+        <li>Welcome, <%= current_user.name %>!</li>
+        <li><%= link_to "Sign Out", signout_path %></li>
+      <% else %>
+        <li><%= link_to "Sign in with Twitter", "/auth/twitter" %></li>
+        <li><%= link_to "Sign in with Facebook", "/auth/facebook" %></li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="container" id="main">
+  <div class="row">
+    <div class="sixcol">
+    <%- flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, :id => "flash_#{name}", :class => "message" if msg.is_a?(String) %>
+    <% end %>
+      <%= yield %>
+    </div>
+    <div class="sixcol last">
+    </div>
+  </div>
+</div>
+<div class="container" id="footer">
+  <div class="row">
+  </div>
+</div>
 </body>
 </html>

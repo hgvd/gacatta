@@ -1,0 +1,49 @@
+#header {
+  padding-top: 10px;
+  padding-bottom: 0;
+  background-color: #335577;
+  color: #fff;
+}
+
+#main {
+}
+
+#footer {
+  margin-bottom: 0;
+  padding: 10px 0;
+  background-color: #335577;
+  color: #fff;
+}
+
+ul#navigation {
+  margin: 0;
+  list-style: none;
+  text-align: right;
+}
+#navigation li {
+  display: inline-block;
+}
+#navigation a, #navigation a:visited {
+  color: #fff;
+}
+ul#signin {
+  margin: 0;
+  list-style: none;
+  text-align: right;
+}
+#signin li {
+  display: inline-block;
+}
+#signin a, #signin a:visited {
+  color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #335566;
+}
+
+.message {
+  margin: 1em 0;
+  padding: 1em;
+  border: 1px solid #335577;
+}
