@@ -1,3 +1,29 @@
+body {
+  line-height: 165%;
+}
+
+a {
+  color: #357;
+}
+a:hover {
+  color: #735;
+}
+
+table {
+  margin: 1em 0;
+}
+th {
+  background-color: #357;
+  color: #fff;
+  padding: 0 0.25em;
+  white-space: nowrap;
+}
+td {
+  padding: 0 0.25em;
+}
+.number {
+  text-align: right;
+}
 #header {
   padding-top: 10px;
   padding-bottom: 0;
@@ -39,11 +65,105 @@ ul#signin {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #335566;
+  color: #357;
+  margin: 1em 0;
 }
-
+h1 {
+  font-size: 197%;
+}
 .message {
   margin: 1em 0;
   padding: 1em;
   border: 1px solid #335577;
+}
+
+.article {
+  margin: 1em 0;
+}
+.article .title, .gene .symbol {
+  font-size: 117%;
+  font-weight: bold;
+}
+
+.gene, .genes {
+  background-color: #bdf;
+  color: #000;
+  padding: 0;
+  border: 1px solid #9bd;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.disease, .diseases {
+  background-color: #fdb;
+  color: #000;
+  padding: 0;
+  border: 1px solid #db9;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.variation, .variations {
+  background-color: #dfb;
+  color: #000;
+  padding: 0;
+  border: 1px solid #bd9;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.genes, .diseases, .variations {
+  padding: 0.25em;
+  margin: 0.25em 0;
+}
+
+.validation {
+  display: inline-block;
+  padding: 0.25em;
+  margin: 0.25em 0;
+  border: 2px solid #666;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  text-align: center;
+}
+.validation .gene {
+  margin: 0.25em 0;
+}
+.validation .variation {
+  margin-bottom: 0.5em;
+}
+.valid {
+  padding: 0.25em;
+  font-size: 197%;
+  color: #090;
+}
+.invalid {
+  padding: 0.25em;
+  font-size: 197%;
+  color: #900;
+}
+.dashboard {
+  margin: 1em 0;
+  padding: 1em;
+}
+.dashboard li {
+  display: inline-block;
+  width: 7em;
+  background-color: #bdf;
+  border: 1px solid #357;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  line-height: 1.1em;
+  text-align: center;
+  font-size: 197%;
+}
+.dashboard a {
+  padding: 2em 1em;
+  display: block;
+  text-decoration: none;
 }

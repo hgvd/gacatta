@@ -1,0 +1,12 @@
+<h1><%= @subject.term %></h1>
+
+<div class="articles">
+  <h2><%= number_with_delimiter(@subject.articles_count) %> Articles</h2>
+  <ul>
+  <% @articles.each do |article| %>
+    <li class="article"><%= link_to(article.title, article, :class => "title") %></li>
+  <% end %>
+  </ul>
+
+  <%= paginate @articles %>  
+</div>

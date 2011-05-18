@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  article_id: 1
+  mutation_pattern: MyString
+  position_pattern: MyString
+  wild_type: MyString
+  mutation_type: MyString
+  position: MyString
+
+two:
+  article_id: 1
+  mutation_pattern: MyString
+  position_pattern: MyString
+  wild_type: MyString
+  mutation_type: MyString
+  position: MyString

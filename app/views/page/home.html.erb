@@ -1,1 +1,5 @@
-<h1>Home</h1>
+<ul class="dashboard">
+  <li><%= link_to(pluralize(number_with_delimiter(Article.count), "article"), articles_path) %></li>
+  <li><%= link_to(pluralize(number_with_delimiter(Subject.count), "disease"), diseases_path) %></li>
+  <li><%= link_to(pluralize(number_with_delimiter(Gene.count), "gene"), genes_path) %></li>
+</ul>

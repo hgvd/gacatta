@@ -1,0 +1,18 @@
+<div id="<%= dom_id(@gene) %>" class="<%= dom_class(@gene) %>">
+  <div class="symbol"><%= @gene.symbol %></div>
+  <div class="name"><%= @gene.name %></div>
+  <div class="chromosome">Chromosome: <%= @gene.chromosome %></div>
+  <div class="map_location">Map Location: <%= @gene.map_location %></div>
+  [<%= link_to("NCBI Gene", "http://www.ncbi.nlm.nih.gov/gene/#{@gene.id}", :target => "_blank") %>]
+</div>
+
+<div class="articles">
+  <h1><%= number_with_delimiter(@gene.articles_count) %> Articles</h1>
+  <ul>
+  <% @articles.each do |article| %>
+    <li class="article"><%= link_to(article.title, article, :class => "title") %></li>
+  <% end %>
+  </ul>
+
+  <%= paginate @articles %>  
+</div>

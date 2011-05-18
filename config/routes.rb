@@ -1,4 +1,8 @@
 Gacatta::Application.routes.draw do
+  resources :articles
+  resources :genes
+  resources :diseases, :controller => :subjects
+
   match "/home" => "page#home", :as => :home
   match "/about" => "page#about", :as => :about
 

@@ -1,0 +1,15 @@
+<h1>Diseases</h1>
+<table>
+  <tr>
+    <th>Disease</th>
+    <th>Articles</th>
+  </tr>
+<% @subjects.each do |subject| %>
+  <tr>
+    <td><%= link_to(subject.term, disease_path(subject)) %></td>
+    <td class="number"><%= number_with_delimiter(subject.articles_count)%></td>
+  </tr>
+<% end %>  
+</table>
+
+<%= paginate @subjects %>

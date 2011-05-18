@@ -4,6 +4,7 @@
   <title>HGVD.org</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?3.3.0/build/cssreset/reset-min.css&3.3.0/build/cssfonts/fonts-min.css&3.3.0/build/cssbase/base-min.css">
   <!-- The 1140px Grid --> 
   <%= stylesheet_link_tag "1140", :media => "screen" %>
 	
@@ -11,7 +12,7 @@
   <%= stylesheet_link_tag "ie", :media => "screen" %>
   <![endif]--> 
   <!-- Type and image presets --> 
-  <%= stylesheet_link_tag "typeimg", :media => "screen" %>
+  <!-- %= stylesheet_link_tag "typeimg", :media => "screen" %-->
   <!-- Make minor type adjustments for 1024 monitors --> 
   <%= stylesheet_link_tag "smallerscreen", :media => "only screen and (max-width: 1023px)" %>
   <!-- Resets grid for mobile --> 
@@ -43,10 +44,10 @@
     </div>
     <div class="sixcol last">
       <ul id="navigation">
-        <li>Home</li>
-        <li>Genes</li>
-        <li>Variations</li>
-        <li>Diseases</li>
+        <li><%= link_to("Home", root_path) %></li>
+        <li><%= link_to("Articles", articles_path)%></li>
+        <li><%= link_to("Diseases", diseases_path) %></li>
+        <li><%= link_to("Genes", genes_path) %></li>
         <li>About</li>
       </ul>
       <ul id="signin">
@@ -64,13 +65,11 @@
 </div>
 <div class="container" id="main">
   <div class="row">
-    <div class="sixcol">
+    <div class="twelvecol">
     <%- flash.each do |name, msg| -%>
       <%= content_tag :div, msg, :id => "flash_#{name}", :class => "message" if msg.is_a?(String) %>
     <% end %>
       <%= yield %>
-    </div>
-    <div class="sixcol last">
     </div>
   </div>
 </div>

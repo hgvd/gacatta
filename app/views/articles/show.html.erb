@@ -1,0 +1,21 @@
+<div id="<%= dom_id(@article) %>" class="<%= dom_class(@article) %>">
+  <div class="source"><%= link_to(@article.source, "http://pubmed.gov/#{@article.id}", :target => "_blank") %></div>
+  <div class="title"><%= mark_genes(@article.title, @genes, @diseases, @variations) %></div>
+  <div class="abstract"><%= mark_genes(@article.abstract, @genes, @diseases, @variations) %></div>
+</div>
+
+<div class="validations">
+<% @diseases.each do |disease| %>
+  <% @genes.each do |gene| %>
+    <% @variations.each do |variation| %>
+  <div class="validation">
+    <div class="disease"><%= disease.term %></div>
+    <div class="gene"><%= gene.symbol %></div>
+    <div class="variation"><%= variation.wild_type + variation.position + variation.mutation_type %></div>
+    <span class="valid">&#10004;</span>
+    <span class="invalid">&#10008;</span>
+  </div>
+    <% end %>
+  <% end %>
+<% end %>  
+</div>
