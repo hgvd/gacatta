@@ -2,7 +2,7 @@ class GenesController < ApplicationController
   # GET /genes
   # GET /genes.xml
   def index
-    @genes = Gene.order("articles_count desc, symbol asc").page(params[:page])
+    @genes = Gene.order("articles_count desc, symbol asc").page(params[:page]).limit(100)
 
     respond_to do |format|
       format.html # index.html.erb
